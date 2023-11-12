@@ -94,6 +94,7 @@ export class ApiClient {
       case 206:
         console.warn("at least one of the requested ids was not found");
         break;
+      case 401:
       case 403:
         throw new Error("invalid api key or insufficient permissions");
       case 404:
