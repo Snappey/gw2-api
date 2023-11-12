@@ -1,5 +1,5 @@
 import {ApiClient, Localisation, SchemaVersion} from "./api-client";
-import {AchievementsService, BackstoryService, BuildService, ColorService} from "./v2";
+import {AccountService, AchievementsService, BackstoryService, BuildService, ColorService} from "./v2";
 
 export class Gw2Client extends ApiClient {
 
@@ -7,6 +7,7 @@ export class Gw2Client extends ApiClient {
     super("https://api.guildwars2.com", apiKey, language, schemaVersion, useHeaders);
   }
 
+  public readonly account: AccountService = new AccountService(this);
   public readonly achievements: AchievementsService = new AchievementsService(this);
   public readonly backstory: BackstoryService = new BackstoryService(this);
   public readonly build: BuildService = new BuildService(this);
