@@ -1,5 +1,4 @@
 import {z} from "zod";
-import {s} from "vitest/dist/reporters-5f784f42";
 
 export const AccountSchema = z.object({
   id: z.string(),
